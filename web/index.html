@@ -463,6 +463,7 @@ async function poll(){const s=document.getElementById('status');try{const st=DEM
   ingest(st.events||[]);
   s.textContent='Werkstadt · '+(DEMO?'Demo · ':'')+new Date(st.updated).toLocaleTimeString(LOC,{hour:'2-digit',minute:'2-digit'})+(G.overflow?` · ${G.overflow} ${X('weitere Repos ohne Platz','more repos without room')}`:'')}
   catch(e){s.textContent=X('Werkstadt · Collector nicht erreichbar','Werkstadt · collector not reachable')}}
+if(['day','night'].includes(QS.get('time')))setMode(QS.get('time'));   // ?time=day|night legt die Ansicht fest
 poll();setInterval(poll,5000);requestAnimationFrame(frame);
 </script>
 </body>
