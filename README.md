@@ -2,6 +2,8 @@
 
 A live map of your projects as a top-down toy-brick town. Every git repo is a town, Claude Code sessions walk around as figures, each new commit is one car trip, CI runs are trains, the latest releases orbit as satellites, and published container images lie in the harbour.
 
+![Werkstadt in demo mode by day: towns inside a rail ring, villages outside, harbour with ships below](docs/werkstadt-day.png)
+
 Runs on your own machine. Python standard library only, no build step, no account, nothing leaves your network.
 
 ## Setup
@@ -43,6 +45,12 @@ Needs `git` and `curl`. Optional: `gh` (logged in) for CI status and for suggest
 | Docker containers | containers on the quay |
 
 Repos with fewer than 20 files or no commit in 30 days are left off the map.
+
+At night only active repos are lit:
+
+![The same map at night](docs/werkstadt-night.png)
+
+Both pictures show the built-in demo data (`/?demo`). `?time=day` or `?time=night` fixes the view instead of following the clock.
 
 ## How it gets its data
 
